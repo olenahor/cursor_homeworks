@@ -11,7 +11,7 @@ print(f' The id of int_a is {id(int_a)} \n', f'The id of str_b is {id(str_b)} \n
 
 #2. Append 4 and 5 to the lst_d and define the id one more time.
 lst_d.extend([4, 5])
-print(f'The id of set_c is {id(lst_d)}')
+print(f'The id of lst_d is {id(lst_d)}')
 
 #3. Define the type of each object from step 1.
 print(f'The object type of int_a is {type(int_a)}')
