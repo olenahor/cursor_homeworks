@@ -169,7 +169,7 @@ print(lst_lmb)
 # 23*. Raise each list number to the corresponding number on another list:
 list_A = [2, 3, 4]
 list_B = [5, 6, 7]
-list_C = list(map(lambda x, y: x ** y, list_A, list_B))
+list_C = list(map(lambda x, y: x * y, list_A, list_B))
 print(list_C)
 
 # 24. Use filter and lambda to filter the number of a lst_to_sort with elem % 2 == 1.
