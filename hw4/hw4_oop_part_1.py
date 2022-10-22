@@ -66,7 +66,6 @@ class Bear:
     def eat(self):
         print("Bear is eating")
 
-
 class Wolf:
     def eat(self):
         print("Wolf is eating")
@@ -84,12 +83,15 @@ for animal in (bear_1, wolf_1):
 #інакше повертається повідомлення: "Your city is too small". Підказка: використовуєте для цього завдання магічні методи
 
 class City:
-    def __init__(self, name, population):
-        self.name = name
+    def __new__(cls, name, population):
         if population > 1500:
-            self.population = population
+            return object.__new__(cls)
         else:
             print("Your city is too small")
+    def __init__(self, name, population):
+        self.name = name
+        self.population = population
+        print(f"Welcome to {self.name}")
 
 lviv = City("Lviv", 721301)
 vynnyky = City("Vynnyky", 1499)
