@@ -62,20 +62,33 @@ school_bus_10 = SchoolBus((50, 12000),(123, 5000))
 school_bus_10.bus_school_color('green')
 
 #7. Поліморфізм: Створіть два класи: Bear, Wolf. Обидва вони повинні мати метод eat. Створіть два екземпляри: від Ведмідь і від Вовк,
-class Bear:
+class Animal:
+    def __init__(self):
+        self.name = 'animal'
+        self.meal = 'meal'
+
     def eat(self):
-        print("Bear is eating")
+        print(f'{self.name} eats {self.meal}')
 
-class Wolf:
-    def eat(self):
-        print("Wolf is eating")
 
-bear_1 = Bear()
-wolf_1 = Wolf()
+class Bear(Animal):
+    def __init__(self):
+        super().__init__()
+        self.name = 'Bear'
+        self.meal = 'berries'
 
-animals_tuple = (bear_1, wolf_1)
 
-for animal in (bear_1, wolf_1):
+class Wolf(Animal):
+    def __init__(self):
+        super().__init__()
+        self.name = 'Wolf'
+        self.meal = 'meat'
+
+bear_test = Bear()
+wolf_test = Wolf()
+animals_tuple = (bear_test, wolf_test)
+
+for animal in animals_tuple:
     animal.eat()
 
 #Додатково: 8*. Створіть клас City з атрибутами екземпляра name i population, сторіть новий екземпляр цього класу,
@@ -88,6 +101,7 @@ class City:
             return object.__new__(cls)
         else:
             print("Your city is too small")
+            
     def __init__(self, name, population):
         self.name = name
         self.population = population
