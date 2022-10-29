@@ -167,7 +167,7 @@ class AddressBook2:
         return f'AddressBook{(str(address_book_2_dict).replace("{","(").replace("}", ")"))}'
 
 test_address_book = AddressBook2(2212, 'Olena', '09555555555', 'Lviv', 'olena_h@gmail.com', '1994', 28)
-print(test_address_book.__repr__())
+print(test_address_book)
 
 #9.
 class Person:
@@ -178,18 +178,10 @@ class Person:
     _age = 36
     country = "USA"
 
-    def get_age(self):
-        print("getter method called")
-        return self._age
 
-    def set_age(self, new_age):
-        print("setter method called")
-        self._age = new_age
-
-
-galia = Person()
-galia.set_age(18)
-print(galia.get_age())
+test = Person()
+setattr(test, 'age', 20)
+print(test.age)
 
 #10.
 class Student:
@@ -200,11 +192,13 @@ class Student:
     id = 0
     name = ""
 
-    def __init__(self, id, name, email):
+    def __init__(self, id, name):
         self.id = id
         self.name = name
-        self.student_email = email
 
 
-test_student = Student(23, 'Olena', 'olenah@gmail.com')
+test_student = Student(123, 'Olena')
+setattr(test_student, 'email', 'olena_123@gmail.com')
+print(test_student.email)
+test_student.student_email = 'olena_111@gmail.com'
 print(getattr(test_student, 'student_email'))
