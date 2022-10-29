@@ -175,7 +175,7 @@ class Person:
     Change the value of the age property of the person object
     """
     name = "John"
-    _age = 36
+    age = 36
     country = "USA"
 
 
@@ -200,5 +200,5 @@ class Student:
 test_student = Student(123, 'Olena')
 setattr(test_student, 'email', 'olena_123@gmail.com')
 print(test_student.email)
-test_student.student_email = 'olena_111@gmail.com'
-print(getattr(test_student, 'student_email'))
+student_email = getattr(test_student, 'email')
+print(student_email)
