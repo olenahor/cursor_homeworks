@@ -99,7 +99,7 @@ print(test.webcam())
 # 5. Create an abstract class for the Car with the next methods: drive, stop, open_door, close_door, turn_on_light,
 # turn_off_light, enable_radio, disable_radio, where drive and stop will be predefined with some realization, all others
 # should be abstract.
-class Car:
+class Car(ABC):
     def drive(self):
         return 'Drive'
 
