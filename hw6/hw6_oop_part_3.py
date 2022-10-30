@@ -13,11 +13,12 @@ class FibonacciNumbers:
         return self
 
     def __next__(self):
-        fib = self.a
-        if fib > self.max_count:
+        if self.max_count > 0:
+            self.max_count -= 1
+            self.a, self.b = self.b, self.a + self.b
+            return self.a
+        else:
             raise StopIteration
-        self.a, self.b = self.b, self.a + self.b
-        return fib
 
 
 for i in FibonacciNumbers(10):
