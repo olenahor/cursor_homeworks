@@ -16,7 +16,7 @@ employees = [
 ]
 
 
-@timer(func_name = "Show table")
+@timer(func_name="Show table")
 def show_table():
     Employee.show_header()
     for employee in employees:

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-def timer(func_name: str = "Function "):
+def timer(func_name: str):
     def decorate(function):
         def wrapper(*args, **kwargs):
             start = datetime.now()
@@ -13,4 +13,5 @@ def timer(func_name: str = "Function "):
                 )
             return result
         return wrapper
+
     return decorate
