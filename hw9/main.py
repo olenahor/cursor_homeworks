@@ -50,11 +50,3 @@ with ContextManager('file.txt') as file:
     print(file.read())
 
 ContextManager.txt_to_csv('logs.txt', 'logs.csv')
-
-
-
-
-
-
-
-
